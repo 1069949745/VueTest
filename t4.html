@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style scoped>
+        .login-dialog {
+            display: block;
+            /* Changed from none to block to control with Vue */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div v-if="showLogin" id="loginDialog" class="login-dialog">
+        <h2>Login</h2>
+        <form id="loginForm" @submit.prevent="submitLogin">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" v-model="username">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" v-model="password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <button @click="showLoginDialog">Open Login Dialog</button>
+
+</body>
+
+
+
+
+<script>
+    export default {
+        data() {
+            return {
+                showLogin: false,
+                username: '',
+                password: ''
+            };
+        },
+        methods: {
+            showLoginDialog() {
+                this.showLogin = true;
+            },
+            submitLogin() {
+                // Handle the login submission logic here
+                console.log('Username:', this.username) ;
+                console.log('Password:', this.password);
+                // You might want to call an API or dispatch an action
+            }
+        }
+    };
+</script>
+
+</html>

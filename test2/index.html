@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云畅网络</title>
+
+
+    <link rel="stylesheet" href="1.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript" defer>
+        function llearn() {
+            alert("暂未开放");
+
+        }
+
+
+    </script>
+
+    <script src="vue.js"></script>
+    <style>
+        #loginDialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 52%;
+            height: 60%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        }
+
+        #loginDialog h2 {
+            position: relative;
+            top: 3%;
+            left: 45%;
+        }
+
+        #loginDialog form {
+            position: relative;
+            font-size: 15px;
+            left: 22%;
+
+
+        }
+
+        #loginForm input {
+            height: 22px;
+            border-radius: 3%;
+            border: 1px solid gray;
+
+            /* border-color: black; */
+
+        }
+
+        #loginForm label {
+            position: relative;
+            left: -4%;
+        }
+
+        #loginForm span {
+            position: absolute;
+            left: -5%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 触发登录对话框的按钮 -->
+    <!-- <button onclick="showLoginDialog()">登陆</button> -->
+
+    <div class="home">
+        <input type="image" src="home-banner@2x.jpg" name="home-banner">
+        <embed src="logo-white.svg" type="image/svg+xml">
+        <div class="home p0">
+            <h1 style="font-size: 50px;margin-bottom: 0%; "> 云端编程，浏览器里边学边练</h1>
+            <p style="font-size: 16px; margin-bottom: 40px;">
+                软件定义一切，网络连接时空，学习软件技术，创造未来世界。
+            </p>
+            <form action="#">
+                <input
+                    style="position:absolute; top:-60px; border: 1px solid white; border-radius: 5%; width: 6%;height: 32px; background: rgb(52, 92, 223);color:white; margin-left: 83%;"
+                    type="button" name="login" value="登陆" onclick="showLoginDialog('登陆')">
+                <input
+                    style="position:absolute; top:-60px; border: 1px solid white; border-radius: 5%; width: 6%;height: 32px; background: rgb(52, 92, 223);color:white; margin-left: 90%;"
+                    type="button" name="register" value="注册" onclick="showLoginDialog('注册')">
+
+                <input
+                    style="border: 1px solid white; border-radius: 3%; width: 15%;height: 35px; background: white; color:rgb(43, 134, 253);margin-left: 42%;"
+                    type="button" name="learn" value="马上学习" onclick="llearn()">
+            </form>
+        </div>
+    </div>
+    <div class="page p1">
+        <input type="image" src="img-lab@2x.png" name="home-banner">
+        <h1>高级Web实验室</h1>
+        <p>每人拥有自己完全独立的编程实验室，内置所有基础软件及学习素材，打开浏览器，即刻开始编程！</p>
+        <form action="#">
+            <input style="border-radius: 2%; width: 80%;height: 30px; margin-left: 10%; background: white;"
+                type="button" value="了解详情" onclick="llearn()">
+        </form>
+    </div>
+    <div class="page p2">
+        <input type="image" src="img-screens@2x.png">
+        <h1>双屏学习</h1>
+        <p>双屏学习，小屏视频互动，大屏实际操作，学习无障碍。打开浏览器，即刻开始编程！</p>
+        <form action="#">
+            <input
+                style=" border-radius: 2%;width: 80%;height: 30px; margin-left: 10%; margin-bottom: 30px; background: white;"
+                type="submit" value="了解详情" onclick="llearn()">
+        </form>
+    </div>
+
+    <div class="page p1">
+        <!-- <input type="image" src="img-media@2x.png"> -->
+        <p style="font-size: 25px; font-weight: 500; margin-left: 4%; margin-bottom: 10px;"> 课程特色 </p>
+        <hr style="color: whitesmoke;">
+        <div id="lastin">
+            <h2> 丰富的教学服务 </h2>
+            <p>特色教学服务功能，各种配套教学服务，在线学习从未如此轻松。</p>
+            <p style="color: blue;"><a style="color: blue;" href="javascript:llearn()">马上学习</a>&nbsp;&gt</p>
+            <h2> 多元的学习方式 </h2>
+            <p> 知识提炼、答疑解惑、实时互动、开发有特色的教学服务方式。</p>
+            <p style="color: blue;"><a style="color: blue;" href="javascript:llearn()">马上学习</a>&nbsp;&gt</p>
+            <h2> 高品质的学习体验 </h2>
+            <p>多屏合一，随时学习，随时在线，学习记录一目了然，知识充电不再受限。</p>
+            <p style="color: blue;"><a style="color: blue;" href="javascript:llearn()">马上学习</a>&nbsp;&gt </p>
+        </div>
+    </div>
+    <br>
+    <div class="page p2">
+        <p style="height: 30px;"> </p>
+        <p style="text-align: center;"> ©2024 云端科技 Artech All rights reserved</p>
+</body>
+<p style="height: 30px;"> </p>
+</div>
+
+
+
+<div id="app">
+    <!-- 登录对话框 -->
+    <div id="loginDialog">
+        <span style="position: relative; left: 95%;"><button
+                style="font-size: large; border: 0px solid white; background-color: white;"
+                onclick="DisableLoginDialog()">×</button></span>
+        <h2 style="margin-bottom: 8%;">
+            {{loginmode}}
+
+        </h2>
+        <form id="loginForm">
+            <p>
+                <span v-if="!username" style="color: red;">* </span>
+
+                <label for="username">
+                    用户名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+                <input type="text" v-model="username" :style="{ borderColor: username ? 'black' : 'red' }"
+                    placeholder=""><br>
+                <span v-if="!errorusername" style="font-size: 10px; color: red;">请输入正确的用户名！</span>
+
+            </p>
+            <p>
+                <span v-if="!password" style="color: red;">*</span>
+                <label for="password">
+                    密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+                <input type="password" v-model="password" :style="{ borderColor: password ? 'black' : 'red' }"
+                    placeholder=""><br>
+                <span v-if="!errorpassword" style="font-size: 10px; color: red;">请输入正确的密码！</span>
+            </p>
+            <!-- <input type="password" id="password" name="password"><br><br> -->
+            <div v-if="zhuce">
+                <p>
+                    <span v-if="!repassword" style="color: red;">*</span>
+                    <label for="repassword">
+                        确认密码
+                    </label>
+                    <input type="password" v-model="repassword" :style="{ borderColor: repassword ? 'black' : 'red' }"
+                        placeholder=""><br>
+                    <span v-if="!rerrorpassword2" style="font-size: 10px; color: red;">两次输入的密码不一致！</span>
+                    <span v-if="!errorpassword2" style="font-size: 10px; color: red;">请再次输入正确的密码！</span>
+                </p>
+                <p style="position: relative; left: 3%; bottom: -5px;">
+                    <span style=" margin-right: 20px; "> </span>
+                    <input type="button" name="login"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);color:white;border: 1px solid white; border-radius: 10%; background: rgba(4, 136, 245, 0.493);font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="提交" onclick="check();register()">
+                    <input type="reset"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); color:black;border: 1px solid whitesmoke; border-radius: 10%; background:white;font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="重置">
+                    <input type="button"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);color:black;border: 1px solid whitesmoke; border-radius: 10%; background:white;font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="返回" onclick="DisableLoginDialog()">
+                    <!-- <input type="reset" style="font-size: 14px; margin-right: 28px; width: 56px; height: 35px;" value="重置">  -->
+                    <!-- <input type="button" style="font-size: 14px; margin-right: 28px; width: 56px; height: 35px;" value="注册">  -->
+                </p>
+
+
+
+
+
+            </div>
+
+
+
+
+            <div v-if="!zhuce">
+                <p style="position: relative; left: 3%; bottom: -5px;">
+                    <span style=" margin-right: 20px; "> </span>
+                    <input type="button" name="login"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);color:white;border: 1px solid white; border-radius: 10%; background: rgba(4, 136, 245, 0.493);font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="登陆" onclick="check()">
+                    <input type="reset"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); color:black;border: 1px solid whitesmoke; border-radius: 10%; background:white;font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="重置">
+                    <input type="button" name="register"
+                        style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);color:black;border: 1px solid whitesmoke; border-radius: 10%; background:white;font-size: 14px; margin-right: 28px; width: 56px; height: 35px;"
+                        value="注册" onclick="DisableLoginDialog();showLoginDialog('注册')">
+                    <!-- <input type="reset" style="font-size: 14px; margin-right: 28px; width: 56px; height: 35px;" value="重置">  -->
+                    <!-- <input type="button" style="font-size: 14px; margin-right: 28px; width: 56px; height: 35px;" value="注册">  -->
+                </p>
+
+
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+
+
+
+<script>
+    var v1 = new Vue({
+        el: "#app",
+        data: {
+            loginmode: undefined,
+            zhuce: false,
+            username: null,
+            password: null,
+            repassword: null,
+            errorusername: true,
+            errorpassword: true,
+            errorpassword2: true,
+            rerrorpassword2: true
+        }
+    })
+
+
+    function showLoginDialog(mode) {
+        v1.loginmode = mode;
+        if (mode == '注册') {
+            v1.zhuce = true;
+        } else {
+            v1.zhuce = false;
+        }
+        document.getElementById('loginDialog').style.display = 'block';
+    }
+    function DisableLoginDialog() {
+        document.getElementById('loginDialog').style.display = 'none';
+        v1.username = null;
+        v1.password = null;
+        v1.repassword = null;
+        v1.errorpassword = true;
+        v1.errorusername = true;
+        v1.errorpassword2 = true;
+        v1.rerrorpassword2 = true;
+    }
+    function check() {
+        v1.errorpassword = true;
+        v1.errorusername = true;
+        v1.errorpassword2 = true;
+        v1.rerrorpassword2 = true;
+        var inputElement = document.querySelector('#loginForm input');
+        if (!v1.username) {
+            v1.errorusername = false;
+            // 获取 input 元素
+            inputElement.style.borderColor = 'red';
+        }
+        if (!v1.password) {
+            v1.errorpassword = false;
+            inputElement.style.borderColor = 'red';
+        }
+        if (!v1.repassword) {
+            v1.errorpassword2 = false;
+            inputElement.style.borderColor = 'red';
+        }
+        if (v1.repassword != v1.password) {
+            v1.rerrorpassword2 = false;
+            v1.errorpassword2 = true;
+        }
+
+    }
+    function register() {
+        axios({
+            method: 'post',
+            url: 'http://localhost:3000/users',
+            data: {
+                username: v1.username,
+                password: v1.password
+            }
+        })
+
+            .then(function (response) {
+                // 处理成功的响应
+                console.log('注册成功！', response.data);
+                // 这里可以根据需要对响应进行其他操作
+            })
+            .catch(function (error) {
+                // 处理错误的响应
+                console.error('注册失败！', error);
+            });
+
+
+
+    }
+
+</script>
+
+</html>

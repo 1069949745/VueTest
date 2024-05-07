@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Dialog</title>
+</head>
+<body>
+
+<!-- 登录对话框 -->
+<div id="loginDialog" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #f9f9f9; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- 触发登录对话框的按钮 -->
+<button onclick="showLoginDialog()">Open Login Dialog</button>
+
+<script>
+</script>
+function showLoginDialog() {
+  document.getElementById('loginDialog').style.display = 'block';
+}
+
+</body>
+</html>

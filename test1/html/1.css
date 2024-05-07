@@ -1,0 +1,89 @@
+/* css */
+.home {
+    position: relative;
+    color: white;
+}
+
+.home embed {
+    position: absolute;
+    top: -30px;
+    left: 60px;
+    width: 100px;
+    height: 100px;
+}
+
+.home.p0 {
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+}
+
+.home input {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.page {
+    max-width: 100%;
+    max-height: 100%;
+    background: white;
+    color: black;
+}
+
+.page.p1 {
+
+    margin-top: 30px;
+}
+
+.page.p1 input {
+    width: 50%;
+    height: auto;
+}
+
+.page.p2 {
+    margin-top: 30px;
+    background: whitesmoke;
+}
+
+.page.p2 input {
+    width: 50%;
+    height: auto;
+}
+
+p {
+    margin-left: 2%;
+    margin-bottom: 6px;
+}
+
+h1 {
+    margin-left: 2%;
+}
+
+
+img {
+    width: 6%;
+    height: auto;
+    margin-left: -2%;
+    background-image: url(icon1.png);
+
+}
+
+#lastin {
+
+    margin-left: 6%;
+    font-size: 30px;
+}
+
+#lastin h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+#lastin p {
+    font-size: 15px;
+}
